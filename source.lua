@@ -58,6 +58,9 @@ function UI:Main(uiName, gameName, keyBind, themeName)
     local Hider = Instance.new("Frame")
     local input = game:GetService("UserInputService")
     
+	
+    print("Spade is Super Cool")
+	
     uiName = uiName or "Acent Hub"
     gameName = gameName or "BasePlate"
     keyBind = keyBind or "RightAlt"
