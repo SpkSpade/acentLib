@@ -291,8 +291,11 @@ function UI:Main(uiName, gameName, keyBind, themeName)
             Page.Visible = false
             TabButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
         end
- 
-        TabButton.MouseButton1Click:Connect(function()
+        
+        local debounce = false
+        if not debounce then
+           debounce = true
+           TabButton.MouseButton1Click:Connect(function()
             for i, v in pairs(allPages:GetChildren()) do
                 v.Visible = false
             end
@@ -306,6 +309,10 @@ function UI:Main(uiName, gameName, keyBind, themeName)
                 BackgroundColor3 = themeList.buttonColor
             }):Play()
         end)
+           wait(0.5)
+           debounce = false
+        end
+        
 
         local Section = {}
 
